@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <defs>
+    <linearGradient id="counterBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#e2e8f0"/>
+    </linearGradient>
+    <linearGradient id="marbleCounter" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="40%" stop-color="#f1f5f9"/>
+      <stop offset="100%" stop-color="#e2e8f0"/>
+    </linearGradient>
+    <linearGradient id="milkJug" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="50%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#e2e8f0"/>
+    </linearGradient>
+    <linearGradient id="bananaYellow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a"/>
+      <stop offset="60%" stop-color="#facc15"/>
+      <stop offset="100%" stop-color="#ca8a04"/>
+    </linearGradient>
+    <linearGradient id="breadCrust" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#92400e"/>
+      <stop offset="50%" stop-color="#b45309"/>
+      <stop offset="100%" stop-color="#78350f"/>
+    </linearGradient>
+    <filter id="counterShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="6" flood-opacity="0.15" />
+    </filter>
+  </defs>
+
+  <!-- Kitchen Countertop -->
+  <rect width="800" height="380" fill="url(#counterBg)"/>
+  <rect y="380" width="800" height="220" fill="url(#marbleCounter)"/>
+  <line x1="0" y1="380" x2="800" y2="380" stroke="#cbd5e1" stroke-width="2"/>
+
+  <!-- Grocery Item 1: Milk Jug Gallon (Left) -->
+  <g filter="url(#counterShadow)" transform="translate(100, 160)">
+    <!-- Jug handle -->
+    <path d="M 30,70 C 0,80 0,160 30,170" fill="none" stroke="#e2e8f0" stroke-width="18" stroke-linecap="round"/>
+    <!-- Jug body -->
+    <path d="M 40,50 L 50,40 L 110,40 L 120,50 L 140,90 L 150,220 Q 150,230 140,230 L 30,230 Q 20,230 20,220 L 30,90 Z" fill="url(#milkJug)" stroke="#cbd5e1" stroke-width="2"/>
+    <!-- Green cap -->
+    <rect x="68" y="22" width="24" height="18" rx="3" fill="#16a34a" stroke="#15803d" stroke-width="1.5"/>
+    <!-- Label -->
+    <rect x="40" y="110" width="80" height="70" rx="4" fill="#16a34a"/>
+    <rect x="44" y="114" width="72" height="62" rx="3" fill="#ffffff"/>
+    <text x="80" y="132" font-family="Arial, sans-serif" font-size="9" font-weight="900" fill="#dc2626" text-anchor="middle">HORIZON</text>
+    <text x="80" y="145" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#16a34a" text-anchor="middle">ORGANIC</text>
+    <text x="80" y="162" font-family="Arial, sans-serif" font-size="11" font-weight="900" fill="#1e3a8a" text-anchor="middle">Whole Milk</text>
+    <text x="80" y="172" font-family="Arial, sans-serif" font-size="7" fill="#64748b" text-anchor="middle">1 Gallon (3.78L)</text>
+  </g>
+
+  <!-- Grocery Item 2: Bananas Bunch (Center) -->
+  <g filter="url(#counterShadow)" transform="translate(290, 250)">
+    <!-- Banana 1 -->
+    <path d="M 20,40 C 70,20 140,30 190,90 C 130,70 60,70 20,40 Z" fill="url(#bananaYellow)" stroke="#ca8a04" stroke-width="1.5"/>
+    <!-- Banana 2 -->
+    <path d="M 22,42 C 80,40 150,60 185,120 C 125,95 65,85 22,42 Z" fill="url(#bananaYellow)" stroke="#ca8a04" stroke-width="1.5"/>
+    <!-- Banana 3 -->
+    <path d="M 18,38 C 75,10 160,20 205,80 C 145,55 70,60 18,38 Z" fill="url(#bananaYellow)" stroke="#ca8a04" stroke-width="1.5"/>
+    <!-- Crown Stem -->
+    <rect x="10" y="32" width="20" height="16" rx="3" fill="#4d7c0f"/>
+    <!-- Organic Sticker -->
+    <ellipse cx="110" cy="55" rx="10" ry="7" fill="#15803d"/>
+    <text x="110" y="58" font-family="Arial, sans-serif" font-size="6" font-weight="bold" fill="#ffffff" text-anchor="middle">94011</text>
+  </g>
+
+  <!-- Grocery Item 3: Whole Wheat Bread (Right) -->
+  <g filter="url(#counterShadow)" transform="translate(520, 200)">
+    <!-- Bread Loaf Bag -->
+    <rect x="0" y="40" width="180" height="150" rx="20" fill="url(#breadCrust)"/>
+    <ellipse cx="180" cy="115" rx="15" ry="50" fill="#78350f" stroke="#451a03" stroke-width="2"/>
+    <!-- Bag plastic tie clip -->
+    <rect x="188" y="105" width="8" height="20" rx="2" fill="#eab308"/>
+    <!-- Dave's Killer Bread Label -->
+    <rect x="25" y="65" width="130" height="90" rx="8" fill="#1e293b"/>
+    <text x="90" y="92" font-family="Arial, sans-serif" font-size="12" font-weight="900" fill="#facc15" text-anchor="middle">DAVE'S</text>
+    <text x="90" y="106" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#ffffff" text-anchor="middle">KILLER BREAD</text>
+    <text x="90" y="125" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#38bdf8" text-anchor="middle">21 Whole Grains</text>
+    <text x="90" y="140" font-family="Arial, sans-serif" font-size="8" fill="#94a3b8" text-anchor="middle">ORGANIC - 24 OZ</text>
+  </g>
+
+  <!-- Counter Tag -->
+  <rect x="270" y="540" width="260" height="32" rx="16" fill="#ffffff" stroke="#cbd5e1" filter="url(#counterShadow)"/>
+  <text x="400" y="561" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#15803d" text-anchor="middle">KITCHEN COUNTER • REPEATLESS AI</text>
+</svg>

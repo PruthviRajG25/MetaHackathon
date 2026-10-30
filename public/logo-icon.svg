@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <!-- Background rounded squircle gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#064e3b" />
+      <stop offset="50%" stop-color="#047857" />
+      <stop offset="100%" stop-color="#0f766e" />
+    </linearGradient>
+
+    <!-- Emerald Leaf Loop Gradient -->
+    <linearGradient id="leafGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#34d399" />
+      <stop offset="50%" stop-color="#10b981" />
+      <stop offset="100%" stop-color="#059669" />
+    </linearGradient>
+
+    <!-- AI Intelligence Flow Ribbon Gradient -->
+    <linearGradient id="flowGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#6ee7b7" />
+      <stop offset="40%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#a7f3d0" />
+    </linearGradient>
+
+    <!-- Spark Gold Accent Gradient -->
+    <linearGradient id="sparkGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a" />
+      <stop offset="100%" stop-color="#fbbf24" />
+    </linearGradient>
+
+    <!-- Outer Soft Glow -->
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#047857" flood-opacity="0.35" />
+    </filter>
+
+    <filter id="iconDepth" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#022c22" flood-opacity="0.4" />
+    </filter>
+  </defs>
+
+  <!-- Base Squircle Container -->
+  <rect x="24" y="24" width="464" height="464" rx="120" fill="url(#bgGrad)" filter="url(#softGlow)" />
+
+  <!-- Subtle Inner Border Highlight -->
+  <rect x="28" y="28" width="456" height="456" rx="116" fill="none" stroke="#6ee7b7" stroke-width="2.5" opacity="0.25" />
+
+  <!-- Center Symbol: Continuous Infinity Loop + Sprouting Leaf + AI Nodes -->
+  <g filter="url(#iconDepth)" transform="translate(4, -2)">
+    <!-- Primary Loop 1: Organic Fresh Leaf / Grocery Loop -->
+    <path
+      d="M 256,256 C 210,180 150,150 95,195 C 40,240 50,330 115,365 C 180,400 230,340 256,256 Z"
+      fill="url(#leafGrad)"
+    />
+
+    <!-- Secondary Loop 2: AI Predictive Restock Ribbon -->
+    <path
+      d="M 256,256 C 302,332 362,362 417,317 C 472,272 462,182 397,147 C 332,112 282,172 256,256 Z"
+      fill="url(#flowGrad)"
+      opacity="0.95"
+    />
+
+    <!-- Overlapping Central Synergy Fold -->
+    <path
+      d="M 215,220 C 235,190 277,190 297,220 C 277,250 235,250 215,220 Z"
+      fill="#ffffff"
+      opacity="0.3"
+    />
+
+    <!-- Central Leaf Vein Accent -->
+    <path
+      d="M 105,270 Q 170,265 240,250"
+      fill="none"
+      stroke="#ffffff"
+      stroke-width="5"
+      stroke-linecap="round"
+      opacity="0.6"
+    />
+
+    <!-- AI Multimodal Spark (Top Right of Intelligence Loop) -->
+    <g transform="translate(390, 150)">
+      <circle cx="0" cy="0" r="14" fill="url(#sparkGrad)" />
+      <!-- Star Spark Radiance -->
+      <path d="M 0,-24 L 4,-6 L 22,0 L 4,6 L 0,24 L -4,6 L -22,0 L -4,-6 Z" fill="#ffffff" />
+    </g>
+
+    <!-- Grocery Node Pulse (Bottom Left of Leaf Loop) -->
+    <circle cx="120" cy="355" r="9" fill="#ffffff" opacity="0.85" />
+    <circle cx="155" cy="380" r="5" fill="#a7f3d0" opacity="0.75" />
+
+    <!-- Center Intelligence Focal Point -->
+    <circle cx="256" cy="256" r="10" fill="#ffffff" />
+  </g>
+</svg>

@@ -1,0 +1,149 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" width="100%" height="100%">
+  <defs>
+    <linearGradient id="wallBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f5f5f0"/>
+      <stop offset="100%" stop-color="#e8e8e0"/>
+    </linearGradient>
+    <linearGradient id="woodShelf" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#8d6e63"/>
+      <stop offset="30%" stop-color="#a1887f"/>
+      <stop offset="100%" stop-color="#6d4c41"/>
+    </linearGradient>
+    <linearGradient id="tomatoCan" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#b91c1c"/>
+      <stop offset="40%" stop-color="#ef4444"/>
+      <stop offset="80%" stop-color="#dc2626"/>
+      <stop offset="100%" stop-color="#991b1b"/>
+    </linearGradient>
+    <linearGradient id="oliveOilGlass" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#14532d"/>
+      <stop offset="30%" stop-color="#166534"/>
+      <stop offset="70%" stop-color="#15803d"/>
+      <stop offset="100%" stop-color="#052e16"/>
+    </linearGradient>
+    <linearGradient id="oatsCanister" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1e3a8a"/>
+      <stop offset="45%" stop-color="#2563eb"/>
+      <stop offset="85%" stop-color="#1d4ed8"/>
+      <stop offset="100%" stop-color="#172554"/>
+    </linearGradient>
+    <linearGradient id="almondJar" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#d97706"/>
+      <stop offset="50%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#b45309"/>
+    </linearGradient>
+    <filter id="shelfShadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="8" stdDeviation="6" flood-opacity="0.25" />
+    </filter>
+    <filter id="objectShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="6" stdDeviation="4" flood-opacity="0.2" />
+    </filter>
+  </defs>
+
+  <!-- Pantry Wall Backdrop -->
+  <rect width="900" height="600" fill="url(#wallBg)"/>
+  
+  <!-- Subtle subway tile / panel lines -->
+  <g stroke="#e2e0d8" stroke-width="1" opacity="0.6">
+    <line x1="0" y1="100" x2="900" y2="100" />
+    <line x1="0" y1="200" x2="900" y2="200" />
+    <line x1="0" y1="300" x2="900" y2="300" />
+    <line x1="0" y1="400" x2="900" y2="400" />
+    <line x1="150" y1="0" x2="150" y2="600" />
+    <line x1="300" y1="0" x2="300" y2="600" />
+    <line x1="450" y1="0" x2="450" y2="600" />
+    <line x1="600" y1="0" x2="600" y2="600" />
+    <line x1="750" y1="0" x2="750" y2="600" />
+  </g>
+
+  <!-- MAIN PANTRY SHELF (Middle / Bottom) -->
+  <g filter="url(#shelfShadow)">
+    <rect x="50" y="440" width="800" height="26" rx="4" fill="url(#woodShelf)"/>
+    <rect x="50" y="466" width="800" height="10" fill="#4e342e"/>
+  </g>
+
+  <!-- TOP SHELF ACCENT -->
+  <g filter="url(#shelfShadow)">
+    <rect x="50" y="110" width="800" height="20" rx="3" fill="url(#woodShelf)"/>
+  </g>
+
+  <!-- OBJECT 1: Canned Crushed Tomatoes (San Marzano) - Left cluster [18%, 14%, 52%, 32%] -->
+  <!-- Can 1 (Front) -->
+  <g filter="url(#objectShadow)" transform="translate(140, 220)">
+    <!-- Can body -->
+    <rect x="0" y="20" width="120" height="195" rx="10" fill="url(#tomatoCan)"/>
+    <!-- Metal rim top & bottom -->
+    <ellipse cx="60" cy="20" rx="60" ry="14" fill="#cbd5e1" stroke="#94a3b8" stroke-width="2"/>
+    <ellipse cx="60" cy="215" rx="60" ry="14" fill="#94a3b8" opacity="0.6"/>
+    <!-- Label -->
+    <rect x="6" y="55" width="108" height="125" fill="#fef08a" rx="4"/>
+    <rect x="6" y="55" width="108" height="24" fill="#15803d"/>
+    <text x="60" y="72" font-family="'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing="0.5">SAN MARZANO</text>
+    <circle cx="60" cy="115" r="22" fill="#ef4444"/>
+    <path d="M 60,95 Q 52,105 60,118 Q 68,105 60,95 Z" fill="#15803d"/>
+    <text x="60" y="152" font-family="'Helvetica Neue', Arial, sans-serif" font-size="10" font-weight="bold" fill="#713f12" text-anchor="middle">CRUSHED TOMATOES</text>
+    <text x="60" y="168" font-family="'Helvetica Neue', Arial, sans-serif" font-size="9" fill="#854d0e" text-anchor="middle">NET WT 28 OZ (1.75 LB)</text>
+  </g>
+
+  <!-- Can 2 (Behind Duplicate) -->
+  <g opacity="0.8" transform="translate(90, 200)">
+    <rect x="0" y="20" width="90" height="160" rx="8" fill="url(#tomatoCan)"/>
+    <ellipse cx="45" cy="20" rx="45" ry="10" fill="#cbd5e1"/>
+    <rect x="4" y="50" width="82" height="95" fill="#fef08a" rx="3"/>
+    <text x="45" y="68" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#15803d" text-anchor="middle">SAN MARZANO</text>
+  </g>
+
+  <!-- OBJECT 2: Extra Virgin Olive Oil (Dark Opaque Bottle) [15%, 36%, 68%, 50%] -->
+  <g filter="url(#objectShadow)" transform="translate(340, 160)">
+    <!-- Bottle neck -->
+    <rect x="44" y="0" width="26" height="60" fill="url(#oliveOilGlass)"/>
+    <!-- Gold Foil Cap -->
+    <rect x="41" y="0" width="32" height="28" fill="#eab308" rx="3"/>
+    <line x1="41" y1="12" x2="73" y2="12" stroke="#ca8a04" stroke-width="1.5"/>
+    <!-- Bottle body -->
+    <path d="M 44,60 Q 20,85 15,115 L 15,275 Q 15,280 20,280 L 94,280 Q 99,280 99,275 L 99,115 Q 94,85 70,60 Z" fill="url(#oliveOilGlass)"/>
+    <!-- Label -->
+    <rect x="25" y="120" width="64" height="110" fill="#fefce8" rx="4" stroke="#ca8a04" stroke-width="1"/>
+    <text x="57" y="145" font-family="Georgia, serif" font-size="12" font-weight="bold" fill="#14532d" text-anchor="middle">LUCINI</text>
+    <text x="57" y="160" font-family="Georgia, serif" font-size="8" fill="#713f12" text-anchor="middle">ITALIA</text>
+    <line x1="35" y1="168" x2="79" y2="168" stroke="#ca8a04" stroke-width="1"/>
+    <text x="57" y="182" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#14532d" text-anchor="middle">EXTRA VIRGIN</text>
+    <text x="57" y="194" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#14532d" text-anchor="middle">OLIVE OIL</text>
+    <text x="57" y="218" font-family="Arial, sans-serif" font-size="7" fill="#854d0e" text-anchor="middle">750 ml (25.4 FL OZ)</text>
+  </g>
+
+  <!-- OBJECT 3: Rolled Oats Canister (Quaker) [22%, 53%, 64%, 72%] -->
+  <g filter="url(#objectShadow)" transform="translate(500, 190)">
+    <!-- Blue canister cylinder -->
+    <rect x="0" y="20" width="130" height="230" rx="12" fill="url(#oatsCanister)"/>
+    <!-- White plastic lid -->
+    <ellipse cx="65" cy="20" rx="65" ry="16" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+    <!-- Label banner -->
+    <rect x="8" y="65" width="114" height="140" fill="#ffffff" rx="6"/>
+    <rect x="8" y="65" width="114" height="28" fill="#dc2626" rx="4"/>
+    <text x="65" y="84" font-family="Arial, sans-serif" font-size="14" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing="1">QUAKER</text>
+    <circle cx="65" cy="125" r="22" fill="#fef08a" stroke="#d97706" stroke-width="1"/>
+    <text x="65" y="130" font-family="Georgia, serif" font-size="16" font-weight="bold" fill="#1e3a8a" text-anchor="middle">100%</text>
+    <text x="65" y="165" font-family="Arial, sans-serif" font-size="12" font-weight="900" fill="#1e3a8a" text-anchor="middle">ROLLED OATS</text>
+    <text x="65" y="182" font-family="Arial, sans-serif" font-size="9" fill="#64748b" text-anchor="middle">WHOLE GRAIN - 32 OZ</text>
+  </g>
+
+  <!-- OBJECT 4: Almond Butter Creamy Jar [35%, 75%, 62%, 90%] -->
+  <g filter="url(#objectShadow)" transform="translate(680, 240)">
+    <!-- Glass Jar -->
+    <rect x="5" y="25" width="110" height="155" rx="16" fill="url(#almondJar)"/>
+    <!-- Bronze Metal Lid -->
+    <rect x="12" y="5" width="96" height="24" rx="4" fill="#78350f" stroke="#451a03" stroke-width="1.5"/>
+    <!-- Label -->
+    <rect x="15" y="55" width="90" height="95" fill="#fef3c7" rx="4"/>
+    <text x="60" y="78" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#78350f" text-anchor="middle">MARANATHA</text>
+    <line x1="25" y1="84" x2="95" y2="84" stroke="#d97706" stroke-width="1"/>
+    <text x="60" y="102" font-family="Arial, sans-serif" font-size="11" font-weight="900" fill="#92400e" text-anchor="middle">ALMOND BUTTER</text>
+    <text x="60" y="118" font-family="Arial, sans-serif" font-size="9" font-weight="600" fill="#b45309" text-anchor="middle">CREAMY NO STIR</text>
+    <text x="60" y="138" font-family="Arial, sans-serif" font-size="8" fill="#78350f" text-anchor="middle">NET WT 16 OZ (454g)</text>
+  </g>
+
+  <!-- Shelf Caption / Label at the bottom -->
+  <rect x="330" y="535" width="240" height="28" rx="14" fill="#ffffff" stroke="#e2e8f0" filter="url(#shelfShadow)"/>
+  <text x="450" y="554" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#15803d" text-anchor="middle">PANTRY SHELF A-1 • SAM 3.1 READY</text>
+</svg>
