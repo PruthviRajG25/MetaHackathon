@@ -58,24 +58,31 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
   };
 
   useEffect(() => {
+    let isMounted = true;
     fetch("/api/auth/me")
       .then((res) => {
-        if (!res.ok) throw new Error("Unauthenticated");
+        if (res.status === 401) {
+          router.push("/login");
+          return null;
+        }
         return res.json();
       })
       .then((data) => {
-        if (data.authenticated && data.user) {
+        if (isMounted && data && data.authenticated && data.user) {
           setUser({
             name: data.user.name,
             email: data.user.email,
-            householdName: data.user.household?.name || "My Household",
+            householdName: data.user.household?.name || "Pro's Household",
           });
         }
       })
-      .catch(() => {
-        // If not authenticated, redirect to login
-        router.push("/login");
+      .catch((err) => {
+        console.warn("Session check error (non-fatal):", err);
       });
+
+    return () => {
+      isMounted = false;
+    };
   }, [router]);
 
   const handleLogout = async () => {

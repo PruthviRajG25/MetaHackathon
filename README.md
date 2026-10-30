@@ -9,7 +9,7 @@
 [![Meta AI](https://img.shields.io/badge/Meta%20AI-Muse%20Spark%20%26%20SAM%203.1-0081FB?style=for-the-badge&logo=meta&logoColor=white)](https://ai.meta.com/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 [![MongoDB Atlas](https://img.shields.io/badge/MongoDB-Atlas-47A248?style=for-the-badge&logo=mongodb&logoColor=white)](https://www.mongodb.com/atlas)
-[![Vercel](https://img.shields.io/badge/Deploy-Vercel-black?style=for-the-badge&logo=vercel&logoColor=white)](https://vercel.com/)
+[![Vercel](https://img.shields.io/badge/Deploy-Vercel-black?style=for-the-badge&logo=vercel&logoColor=white)](https://meta-one-delta.vercel.app)
 [![Tests](https://img.shields.io/badge/Unit%20Tests-11%20Passed-brightgreen?style=for-the-badge&logo=jest&logoColor=white)](tests/unit/core-logic.test.ts)
 
 <br/>
@@ -18,6 +18,7 @@
 > *"Your Home Knows What It Needs."*
 
 <p align="center">
+  <a href="https://meta-one-delta.vercel.app"><b>🌐 Live Production Web App</b></a> •
   <a href="#-quick-tour--live-dashboard"><b>Explore Preview</b></a> •
   <a href="#-interactive-architecture-blueprint"><b>System Flow</b></a> •
   <a href="#-meta-ai-multimodal-trio"><b>Meta AI Models</b></a> •

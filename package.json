@@ -1,5 +1,5 @@
 {
-  "name": "meta",
+  "name": "repeatless-ai",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "bcryptjs": "^3.0.3",
+    "cloudinary": "^2.11.0",
     "clsx": "^2.1.1",
     "jose": "^6.2.14",
     "lucide-react": "^1.64.0",

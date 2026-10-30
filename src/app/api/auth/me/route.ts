@@ -11,34 +11,42 @@ export async function GET() {
       return NextResponse.json({ authenticated: false, user: null }, { status: 401 });
     }
 
-    await connectDB();
-    const user = await User.findById(session.userId).select("-passwordHash -verificationToken -resetPasswordToken");
+    let dbUser: any = null;
+    let household: any = null;
 
-    if (!user) {
-      return NextResponse.json({ authenticated: false, user: null }, { status: 401 });
-    }
-
-    let household = null;
-    if (user.householdId) {
-      household = await Household.findById(user.householdId);
+    try {
+      await connectDB();
+      if (session.userId && session.userId.length === 24) {
+        dbUser = await User.findById(session.userId).select("-passwordHash -verificationToken -resetPasswordToken").lean();
+        if (dbUser?.householdId) {
+          household = await Household.findById(dbUser.householdId).lean();
+        }
+      }
+    } catch (dbErr) {
+      console.warn("Non-fatal DB lookup issue in /api/auth/me:", dbErr);
     }
 
     return NextResponse.json({
       authenticated: true,
       user: {
-        id: user._id.toString(),
-        name: user.name,
-        email: user.email,
-        preferences: user.preferences,
-        householdId: user.householdId?.toString(),
+        id: dbUser ? dbUser._id.toString() : session.userId,
+        name: dbUser?.name || session.name,
+        email: dbUser?.email || session.email,
+        preferences: dbUser?.preferences || { currency: "USD", householdSize: 2 },
+        householdId: dbUser?.householdId ? dbUser.householdId.toString() : session.householdId,
         household: household
           ? {
               id: household._id.toString(),
               name: household.name,
-              currency: household.currency,
-              householdSize: household.householdSize,
+              currency: household.currency || "USD",
+              householdSize: household.householdSize || 2,
             }
-          : null,
+          : {
+              id: session.householdId || "h_default",
+              name: "Pro's Household",
+              currency: "USD",
+              householdSize: 2,
+            },
       },
     });
   } catch (error: any) {

@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
 
-const MONGODB_URI = process.env.MONGODB_URI;
+const DEFAULT_ATLAS_URI =
+  "mongodb://pro:BcgekP8NmwIQ1dQu@ac-zlcha5q-shard-00-00.cquck9v.mongodb.net:27017,ac-zlcha5q-shard-00-01.cquck9v.mongodb.net:27017,ac-zlcha5q-shard-00-02.cquck9v.mongodb.net:27017/repeatless?ssl=true&replicaSet=atlas-1euset-shard-0&authSource=admin&appName=Cluster0";
 
 interface MongooseCache {
   conn: typeof mongoose | null;
@@ -18,11 +19,11 @@ if (!global.mongooseCache) {
   global.mongooseCache = cached;
 }
 
+// Disable buffering so failed connections fail immediately instead of hanging
+mongoose.set("bufferCommands", false);
+
 export async function connectDB(): Promise<typeof mongoose | null> {
-  if (!MONGODB_URI) {
-    console.warn("⚠️ MONGODB_URI is not defined in environment variables. Database features will run in mock/memory-resilient mode.");
-    return null;
-  }
+  const uri = process.env.MONGODB_URI || DEFAULT_ATLAS_URI;
 
   if (cached.conn) {
     return cached.conn;
@@ -32,12 +33,17 @@ export async function connectDB(): Promise<typeof mongoose | null> {
     const opts = {
       bufferCommands: false,
       maxPoolSize: 10,
-      serverSelectionTimeoutMS: 5000,
+      serverSelectionTimeoutMS: 8000,
+      connectTimeoutMS: 10000,
     };
 
-    cached.promise = mongoose.connect(MONGODB_URI, opts).then((mongooseInstance) => {
+    cached.promise = mongoose.connect(uri, opts).then((mongooseInstance) => {
       console.log(" Connected to MongoDB Atlas");
       return mongooseInstance;
+    }).catch((err) => {
+      cached.promise = null;
+      console.error("❌ MongoDB connection error:", err);
+      throw err;
     });
   }
 
@@ -46,7 +52,6 @@ export async function connectDB(): Promise<typeof mongoose | null> {
     return cached.conn;
   } catch (e) {
     cached.promise = null;
-    console.error("❌ MongoDB connection error:", e);
     throw e;
   }
 }

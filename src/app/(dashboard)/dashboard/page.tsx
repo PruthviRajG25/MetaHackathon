@@ -47,27 +47,32 @@ export default function DashboardPage() {
   const fetchDashboardData = async () => {
     setLoading(true);
     try {
+      // Concurrently fetch all dashboard state
+      const [sessionRes, invRes, purchRes, shopRes] = await Promise.allSettled([
+        fetch("/api/auth/me"),
+        fetch("/api/inventory"),
+        fetch("/api/purchases"),
+        fetch("/api/shopping-list"),
+      ]);
+
       // 1. Session
-      const sessionRes = await fetch("/api/auth/me");
-      if (sessionRes.ok) {
-        const sessionData = await sessionRes.json();
+      if (sessionRes.status === "fulfilled" && sessionRes.value.ok) {
+        const sessionData = await sessionRes.value.json();
         setUser({
-          name: sessionData.user?.name || "Household Manager",
-          householdName: sessionData.user?.household?.name || "Our Household",
+          name: sessionData.user?.name || "Pro Hacker",
+          householdName: sessionData.user?.household?.name || "Pro's Household",
         });
       }
 
       // 2. Inventory
-      const invRes = await fetch("/api/inventory");
-      if (invRes.ok) {
-        const invData = await invRes.json();
+      if (invRes.status === "fulfilled" && invRes.value.ok) {
+        const invData = await invRes.value.json();
         setInventory(invData.items || []);
       }
 
       // 3. Purchases
-      const purchRes = await fetch("/api/purchases");
-      if (purchRes.ok) {
-        const purchData = await purchRes.json();
+      if (purchRes.status === "fulfilled" && purchRes.value.ok) {
+        const purchData = await purchRes.value.json();
         setPurchases(purchData.purchases || []);
         if (purchData.summary) {
           setSpendingSummary({
@@ -78,9 +83,8 @@ export default function DashboardPage() {
       }
 
       // 4. Shopping List
-      const shopRes = await fetch("/api/shopping-list");
-      if (shopRes.ok) {
-        const shopData = await shopRes.json();
+      if (shopRes.status === "fulfilled" && shopRes.value.ok) {
+        const shopData = await shopRes.value.json();
         setShoppingList(shopData.list);
       }
     } catch (err) {
